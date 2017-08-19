@@ -2,4 +2,4 @@
 
 echo "PSoC 5LP"
 echo "> "
-rlwrap bash -c 'while read -r query; do psoc="http://odroid.0xFFFFFFFF.in/psoc5lp/ns#" curl -s -H content-type:application/x-www-form-urlencoded -H accept:text/plain -XPOST http://odroid.0xffffffff.in:8000/sparql/ -d "query=${query//:/http:\/\/odroid.0xFFFFFFFF.in\/psoc5lp\/ns\#}" | sed "s|http://odroid.0xFFFFFFFF.in/psoc5lp/ns#|:|g" | column -t; echo -n "> "; done'
+rlwrap bash -c 'while read -r query; do ./query http://odroid.0xffffffff.in:8000/sparql/ "${query}"; echo -n "> "; done'
